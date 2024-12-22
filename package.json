@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:workspace": "npm run dev --workspace workspace",
+    "dev:content": "npm run dev --workspace content",
+    "build": "npm run build:all && npm run merge-outputs",
+    "build:workspace": "npm run generate --workspace workspace",
+    "build:content": "npm run generate --workspace content",
+    "build:all": "npm run build:workspace && npm run build:content",
+    "merge-outputs": "node scripts/merge-outputs.js",
+    "preview": "npx serve dist"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.1.1"
+  }
+} 
