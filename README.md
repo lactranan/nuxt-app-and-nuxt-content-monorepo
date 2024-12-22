@@ -1,0 +1,1 @@
+# nuxt-app-and-nuxt-content-monorepo
