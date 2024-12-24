@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content'],
   routeRules: {
-    '/p': { prerender: true }
+    '/': { prerender: true }
   },
   nitro: {
     output: {
