@@ -3,18 +3,21 @@ const path = require('path')
 
 async function mergeOutputs() {
   const rootDir = process.cwd()
+
+  console.log(`Current directory: ${rootDir}`);
+
   const outputDir = path.join(rootDir, 'dist')
-  const workspaceOutput = path.join(rootDir, 'packages/workspace/dist')
-  const contentOutput = path.join(rootDir, 'packages/content/dist')
+  const workspaceOutput = path.join(rootDir, 'packages/workspace/.output/public')
+  const contentOutput = path.join(rootDir, 'packages/content/.vercel/output/static')
 
   // Clear the output directory
   await fs.emptyDir(outputDir)
 
   // Copy workspace output
-  await fs.copy(fs.realpathSync(workspaceOutput), outputDir)
+  await fs.copy(workspaceOutput, outputDir)
 
   // Copy content output, merging with workspace output
-  await fs.copy(fs.realpathSync(contentOutput), outputDir, { overwrite: true })
+  await fs.copy(contentOutput, outputDir, { overwrite: true })
 
   console.log('Successfully merged outputs into dist directory')
 }
