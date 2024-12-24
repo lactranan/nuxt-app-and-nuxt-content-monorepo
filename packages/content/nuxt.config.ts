@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content'],
   routeRules: {
-    '/': { prerender: true }
+    '/p': { prerender: true }
+  },
+  nitro: {
+    output: {
+      publicDir: '.output/public'
+    }
   }
 })

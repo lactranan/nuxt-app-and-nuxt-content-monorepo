@@ -8,7 +8,7 @@ async function mergeOutputs() {
 
   const outputDir = path.join(rootDir, 'dist')
   const workspaceOutput = path.join(rootDir, 'packages/workspace/.output/public')
-  const contentOutput = path.join(rootDir, 'packages/content/.vercel/output/static')
+  const contentOutput = path.join(rootDir, 'packages/content/.output/public')
 
   // Clear the output directory
   await fs.emptyDir(outputDir)
