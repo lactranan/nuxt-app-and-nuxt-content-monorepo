@@ -7,7 +7,7 @@
 <script setup>
 import path from 'path-browserify'
 
-const vitePublicSiteUrl = import.meta.env.VITE_PUBLIC_SITE_URL
+const vitePublicSiteUrl = import.meta.env.VITE_PUBLIC_SITE_URL || 'import.meta.env.VITE_PUBLIC_SITE_URL'
 
 defineProps({
   href: {
