@@ -3,11 +3,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content'],
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
   },
   nitro: {
     output: {
-      publicDir: '.output/public'
-    }
-  }
+      publicDir: '.output/public',
+    },
+  },
+
+  compatibilityDate: '2024-12-25',
 })
