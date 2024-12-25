@@ -20,6 +20,20 @@ npm run dev:workspace
 npm run dev:content
 ```
 
+### Cross-Package Links
+When linking across packages, use the CrossPackageLink component to ensure the bundle is loaded from the other package (avoiding a 404 error). Here's an example:
+
+```html
+<CrossPackageLink href='/workspace'>
+    /workspace
+</CrossPackageLink>
+```
+
+## ENV
+```
+VITE_PUBLIC_SITE_URL=http://localhost:3000
+```
+
 ## Build Process
 
 To build both packages and merge the outputs into a single deployment-ready folder:
@@ -45,4 +59,4 @@ This command runs the merged output for testing before deployment.
 
 ## Deployment
 
-Deploy the dist folder to your server.
+Deploy the `dist` folder to your server.
